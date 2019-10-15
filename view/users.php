@@ -6,9 +6,15 @@ ob_start();?>
 <h1>Voici les membres de notre site</h1>
 
 <?php 
-while($user = $users->fetch()){
-echo "<p>". $user['name'] . "</p>";
-}
+while($user = $users->fetch()){?>
+<p>
+	<ul>
+		<li>Nom: <?= $user['name'];?></li> 
+		<li>Email: <?= $user['email'];?></li>
+		<li>Mot de passe: <?php printf("%12.3s***", $user['password']);?></li>
+	</ul>
+</p>
+<?php }
 $content = ob_get_clean();
 
 require ('view/layout.php');?>

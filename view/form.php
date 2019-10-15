@@ -1,6 +1,7 @@
 <?php $title='Formulaire';
 
 ob_start();?>
+<h1>Formulaire d'inscription</h1>
 <form action="index.php?a=newUser" method="POST">
 	<div class="form-group row">
 		<label for="name" class="col-sm-2 form-control-label">Name</label>

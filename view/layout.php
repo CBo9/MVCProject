@@ -10,12 +10,20 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	</head>
 	<body>
-		<header>
-			<ul>
-				<a href="index.php">Accueil</a>
-				<a href="index.php?a=archives">Archives</a>
-				<a href="index.php?a=form">Formulaire</a>
-				<a href="index.php?a=users">Utilisateurs</a>
+		<header>		
+			<ul class="nav">
+			  <li class="nav-item">
+			    <a class="nav-link active" href="index.php">Accueil</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="index.php?a=archives">Archives</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="index.php?a=form">Inscription</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="index.php?a=users">Utilisateurs</a>
+			  </li>
 			</ul>
 		</header>
 		<?= $content?>
