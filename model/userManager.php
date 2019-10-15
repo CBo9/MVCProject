@@ -1,16 +1,21 @@
 <?php
-require('classes/User.php');
 
-use AFPA\classes\User;
 
-function newUserDB(array $data){
-	$user = new User($data);
+function newUserDB(User $user){
 	$db=db_connect();
 	$insert= $db->prepare('INSERT INTO users (name, password, email ) VALUES (:name,:password,:email)');
 	$insert->execute(['name'=>$user->getName(),
 				   'password'=>$user->getPassword(),
 				   'email'=>$user->getEmail()]);
 
+}
+
+function getAllUsers(){
+	$db=db_connect();
+	$users = $db->prepare('SELECT * FROM users');
+	$users->execute();
+	
+	return $users;
 }
 
 function db_connect(){

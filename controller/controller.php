@@ -1,11 +1,13 @@
 <?php
-
+require('classes/User.php');
+use AFPA\classes\User;
 
 
 function newUser(array $data){
 	require('model/userManager.php');
-	
-	$insertion = newUserDB($data);
+
+	$user = new User($data);
+	$insertion = newUserDB($user);
 	     
     if ($insertion === false) {
         die('Impossible d\'ajouter le membre !');
@@ -13,6 +15,16 @@ function newUser(array $data){
     else {
         header('Location: index.php');
     }
+}
+
+function showAllUsers(){
+    require('model/userManager.php');
+
+    $users = getAllUsers();
+    
+
+    require('view/users.php');
+
 }
 
 

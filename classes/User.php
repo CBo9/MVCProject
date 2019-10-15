@@ -21,9 +21,7 @@ class User{
 		}
 	}
 
-	
-	
-	
+    /*_-_-_-_-_-_-_-GETTERS AND SETTERS-_-_-_-_-_-_-_*/
 
     /**
      * @return mixed

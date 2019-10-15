@@ -15,6 +15,7 @@
 				<a href="index.php">Accueil</a>
 				<a href="index.php?a=archives">Archives</a>
 				<a href="index.php?a=form">Formulaire</a>
+				<a href="index.php?a=users">Utilisateurs</a>
 			</ul>
 		</header>
 		<?= $content?>

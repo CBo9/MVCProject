@@ -12,6 +12,9 @@ if(isset($_GET['a'])){
 	if($a == 'newUser'){
 		newUser($_POST);
 	}
+	if($a == 'users'){
+		showAllUsers();
+	}
 }
 else{
 	require('view/accueil.php');
