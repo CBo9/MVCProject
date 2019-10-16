@@ -14,7 +14,7 @@ function newUser(array $data){
         die('Impossible d\'ajouter le membre !');
     }
     else {
-        header('Location: index.php');
+        header('Location: index.php?a=users');
     }
 }
 
