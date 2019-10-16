@@ -13,7 +13,12 @@ if(isset($_GET['a'])){
 		newUser($_POST);
 	}
 	if($a == 'users'){
-		showAllUsers();
+		if(!isset($id)){
+			showAllUsers();
+		}else{
+			showUser($id);
+		}
+		
 	}
 }
 else{

@@ -9,7 +9,7 @@ ob_start();?>
 while($user = $users->fetch()){?>
 <p>
 	<ul>
-		<li>Nom: <?= $user['name'];?></li> 
+		<li>Nom: <a href="index.php?a=users&id=<?= $user['id'];?> "><?= $user['name'];?></a></li> 
 		<li>Email: <?= $user['email'];?></li>
 		<li>Mot de passe: <?php printf("%12.3s***", $user['password']);?></li>
 	</ul>

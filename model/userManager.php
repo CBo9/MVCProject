@@ -1,5 +1,5 @@
 <?php
-
+use AFPA\classes\User;
 
 function newUserDB(User $user){
 	$db=db_connect();
@@ -16,6 +16,14 @@ function getAllUsers(){
 	$users->execute();
 	
 	return $users;
+}
+
+function getUser($id){
+	$db = db_connect();
+	$user = $db->prepare("SELECT * FROM users WHERE id = '$id' ");
+	$user->execute();
+
+	return $user;
 }
 
 function db_connect(){

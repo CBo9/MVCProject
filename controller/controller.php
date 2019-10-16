@@ -7,6 +7,7 @@ function newUser(array $data){
 	require('model/userManager.php');
 
 	$user = new User($data);
+    print_r($user);
 	$insertion = newUserDB($user);
 	     
     if ($insertion === false) {
@@ -25,6 +26,14 @@ function showAllUsers(){
 
     require('view/users.php');
 
+}
+
+function showUser($id){
+    require('model/userManager.php');
+
+    $user = getUser($id);
+    $user = new User($user->fetch());
+    require('view/user.php');
 }
 
 
