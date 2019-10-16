@@ -21,7 +21,7 @@ ob_start();?>
 			<input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="password" required>
 		</div>
 	</div>
-	<div class="form-group row">
+	<!--<div class="form-group row">
 		<label class="col-sm-2">Checkbox</label>
 		<div class="col-sm-10">
 			<div class="checkbox">
@@ -30,7 +30,7 @@ ob_start();?>
 				</label>
 			</div>
 		</div>
-	</div>
+	</div>-->
 	<div class="form-group row">
 		<div class="col-sm-offset-2 col-sm-10">
 			<button type="submit" class="btn btn-secondary">Sign in</button>

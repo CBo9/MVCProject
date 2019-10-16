@@ -1,4 +1,18 @@
-$color:blue;
-h1{
-	color:$color;
+$mainColor: #525252;
+
+body{
+	background-color: $mainColor;
+	color:white;
+}
+
+header{
+	background-color: #0171EF;
+	& a{
+		color:white;
+		transition: 0.25s;
+		&:hover{
+			color:yellow;
+			transform: scale(1.2);
+		}
+	}
 }
