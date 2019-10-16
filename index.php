@@ -25,6 +25,22 @@ if(isset($_GET['a'])){
 			}
 			break;
 
+		case 'updateUserForm':
+			if(!isset($id)){
+				require('view/error.php');
+			}else{
+				updateUserForm($id);
+			}
+			break;
+
+		case 'updateUser':
+			if(!isset($id)){
+				require('view/error.php');
+			}else{
+				updateUser($id,$_POST);
+			}
+			break;
+
 		case 'about':
 			require('view/about.php');
 			break;

@@ -11,7 +11,7 @@ while($user = $users->fetch()){?>
 	<ul>
 		<li>Nom: <a href="index.php?a=users&id=<?= $user['id'];?> "><?= $user['name'];?></a></li> 
 		<li>Email: <?= $user['email'];?></li>
-		<li>Mot de passe: <?php printf("%12.3s***", $user['password']);?></li>
+		<li>Mot de passe: <?php printf("%-'*" . strlen($user['password']) . ".3s", $user['password']);?></li>
 	</ul>
 </p>
 <?php }

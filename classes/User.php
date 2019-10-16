@@ -5,6 +5,7 @@ class User{
 	protected $name;
 	protected $password;
 	protected $email;
+    protected $id;
 
 	function __construct(array $data = null){
 		if($data){
@@ -79,6 +80,26 @@ class User{
     public function setEmail($email)
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
 
         return $this;
     }

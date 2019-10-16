@@ -8,5 +8,5 @@ header {
     color: white;
     transition: 0.25s; }
     header a:hover {
-      color: yellow;
+      color: #0C18B1;
       transform: scale(1.2); }

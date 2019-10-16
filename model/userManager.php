@@ -26,6 +26,15 @@ function getUser($id){
 	return $user;
 }
 
+function updateUserDB(User $user){
+	$db = db_connect();
+	$update = $db->prepare("UPDATE users SET name = :name , email = :email , password = :password WHERE id = :id ");
+	$update->execute(['name'=>$user->getName(),
+					'email'=>$user->getEmail(),
+					'password'=>$user->getPassword(),
+					'id'=>$user->getId()]);
+}
+
 function db_connect(){
 	try
 		{
