@@ -24,7 +24,7 @@ function showAllUsers(){
     $users = getAllUsers();
     
 
-    require('view/users.php');
+    require('view/user/users.php');
 
 }
 
@@ -33,7 +33,7 @@ function showUser($id){
 
     $user = getUser($id);
     $user = new User($user->fetch());
-    require('view/user.php');
+    require('view/user/user.php');
 }
 
 

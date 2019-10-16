@@ -24,6 +24,9 @@
 			  <li class="nav-item">
 			    <a class="nav-link" href="index.php?a=users">Utilisateurs</a>
 			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="index.php?a=about">Comment ça marche ?</a>
+			  </li>
 			</ul>
 		</header>
 
