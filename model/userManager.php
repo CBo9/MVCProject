@@ -1,49 +1,42 @@
 <?php
+require_once('model/Manager.php');
+
 use AFPA\classes\User;
 
-function newUserDB(User $user){
-	$db=db_connect();
-	$insert= $db->prepare('INSERT INTO users (name, password, email ) VALUES (:name,:password,:email)');
-	$insert->execute(['name'=>$user->getName(),
-				   'password'=>$user->getPassword(),
-				   'email'=>$user->getEmail()]);
 
-}
+class userManager extends Manager{
 
-function getAllUsers(){
-	$db=db_connect();
-	$users = $db->prepare('SELECT * FROM users');
-	$users->execute();
-	
-	return $users;
-}
+	function newUserDB(User $user){
+		$db=$this->db_connect();
+		$insert= $db->prepare('INSERT INTO users (name, password, email ) VALUES (:name,:password,:email)');
+		$insert->execute(['name'=>$user->getName(),
+					   'password'=>$user->getPassword(),
+					   'email'=>$user->getEmail()]);
 
-function getUser($id){
-	$db = db_connect();
-	$user = $db->prepare("SELECT * FROM users WHERE id = '$id' ");
-	$user->execute();
+	}
 
-	return $user;
-}
+	function getAllUsers(){
+		$db=$this->db_connect();
+		$users = $db->prepare('SELECT * FROM users');
+		$users->execute();
+		
+		return $users;
+	}
 
-function updateUserDB(User $user){
-	$db = db_connect();
-	$update = $db->prepare("UPDATE users SET name = :name , email = :email , password = :password WHERE id = :id ");
-	$update->execute(['name'=>$user->getName(),
-					'email'=>$user->getEmail(),
-					'password'=>$user->getPassword(),
-					'id'=>$user->getId()]);
-}
+	function getUser($id){
+		$db = $this->db_connect();
+		$user = $db->prepare("SELECT * FROM users WHERE id = '$id' ");
+		$user->execute();
 
-function db_connect(){
-	try
-		{
-			$connexion = new PDO("mysql:host=localhost;dbname=MVC_DB;charset=utf8",'root','mysql');
-			array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
-			return $connexion;
-		}
-	catch(Exception $e)
-		{
-			echo 'Echec de la connexion:'.$e->getMessage();
-		}
+		return $user;
+	}
+
+	function updateUserDB(User $user){
+		$db = $this->db_connect();
+		$update = $db->prepare("UPDATE users SET name = :name , email = :email , password = :password WHERE id = :id ");
+		$update->execute(['name'=>$user->getName(),
+						'email'=>$user->getEmail(),
+						'password'=>$user->getPassword(),
+						'id'=>$user->getId()]);
+	}
 }

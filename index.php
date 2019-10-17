@@ -1,6 +1,8 @@
 <?php 
 require('controller/controller.php');
 
+$controller = new Controller();
+
 if(!empty($_GET)){
 	extract($_GET);
 	if(isset($a)){
@@ -14,15 +16,15 @@ if(!empty($_GET)){
 				break;
 
 			case 'newUser':
-				newUser($_POST);
+				$controller->newUser($_POST);
 				break;
 
 
 			case 'users':
 				if(!isset($id)){
-					showAllUsers();
+					$controller->showAllUsers();
 				}else{
-					showUser($id);
+					$controller->showUser($id);
 				}
 				break;
 
@@ -30,7 +32,7 @@ if(!empty($_GET)){
 				if(!isset($id)){
 					require'view/error.php';
 				}else{
-					updateUserForm($id);
+					$controller->updateUserForm($id);
 				}
 				break;
 
@@ -38,7 +40,7 @@ if(!empty($_GET)){
 				if(!isset($id)){
 					require'view/error.php';
 				}else{
-					updateUser($id,$_POST);
+					$controller->updateUser($id,$_POST);
 				}
 				break;
 

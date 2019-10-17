@@ -1,4 +1,4 @@
-<? $title = "Page non trouvée";
+<?php $title = "Page non trouvée";
 
 ob_start();?>
 <h1>Erreur 404</h1>

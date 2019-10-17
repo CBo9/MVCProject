@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="public/css/style.min.css">
 	</head>
 	<body>
+		<!-- Nav -->
 		<header>		
 			<ul class="nav">
 			  <li class="nav-item">
@@ -32,6 +33,7 @@
 			</ul>
 		</header>
 
+		<!-- page content defined in the views -->
 		<?= $content?>
 
 		<!-- Optional JavaScript -->
