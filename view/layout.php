@@ -15,7 +15,7 @@
 		<header>		
 			<ul class="nav">
 			  <li class="nav-item">
-			    <a class="nav-link active" href="index.php">Accueil</a>
+			    <a class="nav-link" href="index.php">Accueil</a>
 			  </li>
 			  <li class="nav-item">
 			    <a class="nav-link" href="index.php?a=archives">Archives</a>
